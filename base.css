@@ -39,35 +39,13 @@ html {
     text-size-adjust: 100%;
 }
 
-@media (min-width: 40rem) {
-    html {
-        font-size: 2.5vw;
-    }
-}
-
-@media (min-width: 50rem) {
-    html {
-        font-size: 125%;
-    }
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
 main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: center;
     margin: 0 auto;
     padding: 0;
-    width: 90%;
 }
 
 footer {
@@ -85,10 +63,7 @@ footer p {
     text-align: center;
 }
 
-footer p a:link,
-footer p a:visited,
-footer p a:hover,
-footer p a:active {
+footer p a:is(:any-link, :hover, :active, :focus) {
     font-weight: normal;
 }
 
@@ -127,10 +102,7 @@ p {
     text-align: left;
 }
 
-p a:link,
-p a:visited,
-p a:hover,
-p a:active {
+p a:is(:any-link, :hover, :active, :focus) {
     color: var(--colorFG);
     font-weight: var(--fontWeightBold);
     text-decoration: none;
@@ -170,10 +142,7 @@ em {
     font-style: italic;
 }
 
-li a:link,
-li a:visited,
-li a:hover,
-li a:active {
+li a:is(:any-link, :hover, :active, :focus) {
     color: var(--colorBlue);
     font-weight: var(--fontWeightBold);
     text-decoration: none;
@@ -214,10 +183,7 @@ table {
     margin: 0 0 calc(var(--lineHeight) * 1rem);
 }
 
-table a:link,
-table a:visited,
-table a:hover,
-table a:active {
+table a:is(:any-link, :hover, :active, :focus) {
     color: var(--colorBlue);
     font-weight: var(--fontWeightBold);
     text-decoration: none;
@@ -257,5 +223,99 @@ ul ul {
     ul {
         hyphens: auto;
         text-align: justify;
+    }
+}
+
+/*
+
+TITLE PAGE
+
+*/
+
+body.title-page {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+}
+
+body.title-page main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+
+/*
+
+CONTENT PAGE
+
+*/
+
+body.content-page {
+    padding: 1rem;
+}
+
+body.content-page main {
+    background-color: rgba(23, 23, 23, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    box-sizing: border-box;
+    display: block;
+    padding: 1rem 0;
+    width: auto;
+}
+
+body.content-page main h1:first-of-type {
+    margin-top: calc((var(--lineHeight) * 2rem) - 1rem);
+}
+
+body.content-page main h1,
+body.content-page main h2,
+body.content-page main h3,
+body.content-page main h4,
+body.content-page main h5,
+body.content-page main h6,
+body.content-page main p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+body.content-page main ol,
+body.content-page main ul {
+    margin-left: 2rem;
+    margin-right: 1rem;
+}
+
+
+body.content-page main figure {
+    margin: 0 0 1rem;
+}
+
+body.content-page main figure figcaption {
+    font-size: 75%;
+    text-align: center;
+}
+
+body.content-page main img {
+    margin: 0;
+    width: 100%;
+}
+
+body.content-page footer {
+    margin: 1rem 0 0;
+}
+
+@media (min-width: 40rem) and (min-height: 40rem) {
+    body.content-page main {
+        height: calc(100dvh - 6rem);
+        margin: 1.5rem auto;
+        max-width: 48rem;
+        outline: thin solid white;
+        overflow: scroll;
+        scrollbar-width: none;
+        width: 90%;
     }
 }
