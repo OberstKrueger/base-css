@@ -84,6 +84,11 @@ h2 {
     font-size: 1.5rem;
     font-weight: var(--fontWeightBold);
     margin: calc(var(--lineHeight) * 0.75rem) auto;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
 }
 
 h3,
@@ -153,7 +158,7 @@ li a:visited {
 }
 
 ol {
-    list-style: decimal outside;
+    list-style: decimal inside;
     margin: 0 auto calc(var(--lineHeight) * 1rem);
     padding: 0;
 }
@@ -204,7 +209,7 @@ table tr {
 }
 
 ul {
-    list-style: circle outside;
+    list-style: circle inside;
     margin: 0 auto calc(var(--lineHeight) * 1rem);
     padding: 0;
 }
@@ -279,17 +284,13 @@ body.content-page main h3,
 body.content-page main h4,
 body.content-page main h5,
 body.content-page main h6,
-body.content-page main p {
+body.content-page main ol,
+body.content-page main p,
+body.content-page main table,
+body.content-page main ul {
     margin-left: 1rem;
     margin-right: 1rem;
 }
-
-body.content-page main ol,
-body.content-page main ul {
-    margin-left: 2rem;
-    margin-right: 1rem;
-}
-
 
 body.content-page main figure {
     margin: 0 0 1rem;
