@@ -301,7 +301,8 @@ body.content-page main figure figcaption {
     text-align: center;
 }
 
-body.content-page main img {
+body.content-page main img,
+body.content-page main video {
     margin: 0;
     width: 100%;
 }
